@@ -2,6 +2,18 @@ package dat102.f04.sum1tiln;
 
 import java.util.function.UnaryOperator;
 
+/*
+ * Et lite program som måler kjøretiden for de tre ulike
+ * algoritmene for å summere tallene 1..n.
+ * 
+ * Det er ikke meningen at dere skal forstå alt jeg har skrevet i
+ * dette programmet: 
+ * 		# n -> sum1tilnAlgoA(n)
+ * 		# UnaryOperator<Long> fu
+ * 		# fu.apply(n)
+ * 
+ * men i september (etter 1 mnd med DAT108) forstår dere nok det meste.
+ */
 public class Main {
 
 	public static void main(String[] args) {
@@ -12,8 +24,6 @@ public class Main {
 		taTidOgSkrivUt("B", n -> sum1tilnAlgoB(n), N);
 		taTidOgSkrivUt("C", n -> sum1tilnAlgoC(n), N);
 	}
-	
-	// -------------------------------------------------------------
 	
 	private static long sum1tilnAlgoA(long n) {
 		
@@ -38,9 +48,10 @@ public class Main {
 	private static long sum1tilnAlgoC(long n) {
 		return n * (n+1) / 2;
 	}
-
-	// -------------------------------------------------------------
 	
+	/*
+	 * Hjelpemetode for tidtaking og utskrift
+	 */
 	private static void taTidOgSkrivUt(String abc, UnaryOperator<Long> fu, long n) {
 		
 		System.out.print("Algoritme " + abc + " ");

@@ -1,4 +1,4 @@
-package dat102.f04.lenketbag;
+package dat102.f03.lenketbag;
 
 public class LenketBag<T> implements BagADT<T> {
 
@@ -45,24 +45,28 @@ public class LenketBag<T> implements BagADT<T> {
 
 	@Override
 	public boolean add(T newEntry) {
+		//TODO
+		// Legger inn først i listen siden det er enklest
 		Node ny = new Node(newEntry);
 		ny.neste = forste;
 		forste = ny;
 		antall++;
+		
 		return true;
 	}
 
 	@Override
 	public T remove() {
+		//TODO
 		// Først sjekke om tom
-		if (forste == null) {
+		if (isEmpty()) {
 			return null;
 		}
 		// Fjerner den første siden det er enklest
-		T data = forste.data;
+		T verdi = forste.data;
 		forste = forste.neste;
 		antall--;
-		return data;
+		return verdi;
 	}
 
 	@Override
@@ -84,12 +88,13 @@ public class LenketBag<T> implements BagADT<T> {
 	 * Returnerer referanse til node hvis funnet, ellers null.
 	 */
 	private Node finnNode(T entry) {
-		Node p = forste;
-		while(p != null) {
-			if (p.data.equals(entry)) {
-				return p;
-			} 
-			p = p.neste;
+		
+		Node temp = forste;
+		while(temp != null) {
+			if (temp.data.equals(entry)) {
+				return temp;
+			}
+			temp = temp.neste;
 		}
 		return null;
 	}
@@ -99,6 +104,9 @@ public class LenketBag<T> implements BagADT<T> {
 		//TODO
 		// Her kan vi bruke remove() som hjelpemetode og gå i en løkke.
 		// Evt. bare nullstille medlemsvariabler.
+		while(!isEmpty()) {
+			remove();
+		}
 	}
 
 	@Override
