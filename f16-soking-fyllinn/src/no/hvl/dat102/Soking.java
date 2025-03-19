@@ -19,7 +19,11 @@ public class Soking<T> {
 	 * Søk i usortert tabell - Sekvensielt søk
 	 */
 	public static <T> boolean sokUsortertTabell(T[] tabell, T element) {
-		//TODO
+		for (T tabEl : tabell) {
+			if (tabEl.equals(element)) {
+				return true;
+			}
+		}
 		return false;
 	}
 	
@@ -27,7 +31,13 @@ public class Soking<T> {
 	 * Søk i usortert lenke/kjede - Sekvensielt søk
 	 */
 	public static <T> boolean sokUsortertLenke(Node<T> start, T element) {
-		//TODO
+		Node<T> p = start;
+		while (p != null) {
+			if (p.data.equals(element)) {
+				return true;
+			}
+			p = p.neste;
+		}
 		return false;
 	}
 	
@@ -36,10 +46,17 @@ public class Soking<T> {
 	 */
 	public static <T extends Comparable<T>> 
 			boolean sekvensieltSokSortertTabell(T[] tabell, T element) {
-		//TODO
-		return false;
+		int i = 0;
+		while (i < tabell.length && tabell[i].compareTo(element) < 0) {
+			i++;
+		}
+		
+		if (i == tabell.length) {
+			return false;
+		} else {
+			return element.equals(tabell[i]);
+		}
 	}
-
 	/*
 	 * Søk i sortert lenke/kjede - Sekvensielt søk
 	 */
@@ -63,8 +80,19 @@ public class Soking<T> {
 	private static <T extends Comparable<T>> boolean binaertSokRekursiv(
 			T[] tabell, T element, int venstre, int hoyre) {
 		
-		//TODO
-		return false;
+		int midten = (venstre + hoyre) / 2;
+		
+		if (venstre > hoyre) {
+			return false;
+		}
+		if (tabell[midten].equals(element)) {
+			return true;
+		}
+		if (element.compareTo(tabell[midten]) < 0) {
+			return binaertSokRekursiv(tabell, element, venstre, midten-1);
+		} else {
+			return binaertSokRekursiv(tabell, element, midten+1, hoyre);
+		}
 	}
 	
 	/* ---------------------------------------------------------------- */

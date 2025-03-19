@@ -1,6 +1,10 @@
 package no.hvl.dat102;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 class SokingTest {
 	
@@ -24,8 +28,47 @@ class SokingTest {
 	/* --------------------------------------------------------------- */
 	
 	//TODO Vi må jo skrive tester for å sjekke at det vi lager virker !!
+	@Test
+	void sokUsortertTabellTest() {
+		assertTrue(Soking.sokUsortertTabell(usortertTabell, 2));
+		assertTrue(Soking.sokUsortertTabell(usortertTabell, 0));
+		assertTrue(Soking.sokUsortertTabell(usortertTabell, 6));
+		
+		assertFalse(Soking.sokUsortertTabell(usortertTabell, 5));
+		
+	}
 	
+	@Test
+	void sokUsortertLenkeTest() {
+		assertTrue(Soking.sokUsortertLenke(usortertLenke, 2));
+		assertTrue(Soking.sokUsortertLenke(usortertLenke, 0));
+		assertTrue(Soking.sokUsortertLenke(usortertLenke, 6));
+		
+		assertFalse(Soking.sokUsortertLenke(usortertLenke, 5));
+	}
 	
+	@Test
+	void sekvensieltSokSortertTabell() {
+		assertTrue(Soking.sekvensieltSokSortertTabell(sortertTabell, 0));
+		assertTrue(Soking.sekvensieltSokSortertTabell(sortertTabell, 4));
+		assertTrue(Soking.sekvensieltSokSortertTabell(sortertTabell, 8));
+		
+		assertFalse(Soking.sekvensieltSokSortertTabell(sortertTabell, -1));
+		assertFalse(Soking.sekvensieltSokSortertTabell(sortertTabell, 5));
+		assertFalse(Soking.sekvensieltSokSortertTabell(sortertTabell, 9));
+	}
+	
+	@Test
+	void binaertSokSortertTabellTest() {
+		assertTrue(Soking.binaertSokRekursiv(sortertTabell, 0));
+		assertTrue(Soking.binaertSokRekursiv(sortertTabell, 4));
+		assertTrue(Soking.binaertSokRekursiv(sortertTabell, 8));
+		
+		assertFalse(Soking.binaertSokRekursiv(sortertTabell, -1));
+		assertFalse(Soking.binaertSokRekursiv(sortertTabell, 5));
+		assertFalse(Soking.binaertSokRekursiv(sortertTabell, 9));
+		
+	}
 	
 	
 	

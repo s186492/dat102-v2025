@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/.idea" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/f01-figurer-ordnetpar-losning" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/f02-tabellbag-fyllinn" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/f02-tabellbag-itimen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/f03-node-nodelenke-fyllinn" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/f03-node-nodelenke-losning" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/f04-lenketbag-analyse-fyllinn" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/f04-lenketbag-analyse-losning" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/f05-stabel-fyllinn" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/f05-stabel-losning" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/f06-rekursjon1-fyllinn" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/hello-world" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
